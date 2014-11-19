@@ -1,5 +1,6 @@
 import java.util.Random;
-public class Dice1 
+import java.util.Scanner;
+public class Dice 
 {
 
 	private static int numberOfGames = 10;
@@ -9,7 +10,13 @@ public class Dice1
 		int computerWins = 0, computerRoll = 0;
 		int userWins = 0, userRoll = 0;
 		int tiedGames = 0;
-
+		
+		int rollCount = 0;
+		Scanner inp = new Scanner( System.in );
+        
+        String answer = "";
+        
+        do{
 		for (int round = 0; round < numberOfGames; round++) {
 
 			computerRoll = rollDie();
@@ -28,9 +35,9 @@ public class Dice1
 		}
 
 		// Display the results.
-		System.out.println("Computer    " + computerWins);
-		System.out.println("User        " + userWins);
-		System.out.println("Ties        " + tiedGames);
+		System.out.println("Computer...." + computerWins);
+		System.out.println("User........" + userWins);
+		System.out.println("Ties........" + tiedGames);
 
 		// Determine the grand winner.
 		if (computerWins > userWins) {
@@ -41,7 +48,18 @@ public class Dice1
 			} else {
 				System.out.println("The game has ended in a tie!");
 			}
+			
+			rollCount++;
+			
 		}
+		
+		
+		 System.out.println("Do you want to play again?");
+         answer = inp.next();
+         
+        }while (answer.equals("y"));
+        
+        System.out.println("\nIt took " + rollCount + " roll until you decide to stop playing.");
 	}
 
 	/**
