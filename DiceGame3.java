@@ -153,4 +153,4 @@ public int getThrow()
         	return rollTotal * 2;
         }
         
-}  // end class Dice
+}  // end class DiceGame
