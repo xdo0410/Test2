@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class DiceGame
+public class DiceGame3
 {     
 		// Number showing on the first die.
 		private int die1Rand;
