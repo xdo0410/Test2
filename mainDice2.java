@@ -1,4 +1,5 @@
-public class mainDice2 
+import java.util.Scanner;
+public class mainDice 
 {
 	 public static void main(String[] args) {
          
@@ -7,19 +8,27 @@ public class mainDice2
    
          dice = new Dice2();  // Create the Dice2 object.
          rollCount = 0;
+         Scanner inp = new Scanner( System.in );
          
-         /* Roll the dice until they come up snake eyes. */
+         String answer = "";
+         
+         
+         /* Roll the dice . */
          
          do {
              dice.roll();
              System.out.println("The dice come up " + dice.getDie1() 
                                               + " and " + dice.getDie2());
              rollCount++;
-         } while (dice.getTotal() != 2);
+             
+             System.out.println("Do you want to play again?");
+             answer = inp.next();
+             
+         } while (answer.equals("y"));
          
          /* Report the number of rolls. */
          
-         System.out.println("\nIt took " + rollCount + " rolls to get a 2.");
+         System.out.println("\nIt took " + rollCount + " roll until you decide to stop playing.");
          
       }
 }
